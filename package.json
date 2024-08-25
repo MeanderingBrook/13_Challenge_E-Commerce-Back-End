@@ -1,0 +1,29 @@
+{
+  "name": "13_challenge_e-commerce-back-end",
+  "version": "1.0.0",
+  "description": "Postgres-based e-commerce site back-end utilizing Sequelize",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devstart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeanderingBrook/13_Challenge_E-Commerce-Back-End.git"
+  },
+  "author": "Christopher Milazzo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MeanderingBrook/13_Challenge_E-Commerce-Back-End/issues"
+  },
+  "homepage": "https://github.com/MeanderingBrook/13_Challenge_E-Commerce-Back-End#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pg": "^8.12.0",
+    "sequelize": "^6.37.3"
+  }
+}
