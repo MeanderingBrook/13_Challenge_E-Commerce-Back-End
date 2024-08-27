@@ -1,28 +1,56 @@
-const router = require('express').Router();
-const { Tag, Product, ProductTag } = require('../../models');
+const router = require("express").Router();
+const { Tag, Product, ProductTag } = require("../../models");
 
 // The `/api/tags` endpoint
 
-router.get('/', (req, res) => {
-  // find all tags
-  // be sure to include its associated Product data
+// GET Route requests and returns all Product Tags
+router.get("/", (req, res) => {
+  Tag.findAll({
+    include: [
+      {
+        model: Product,
+        through: ProductTag,
+      },
+    ],
+  }).then((tag) => res.json(tag));
 });
 
-router.get('/:id', (req, res) => {
-  // find a single tag by its `id`
-  // be sure to include its associated Product data
+// GET Route requests and returns only identified (:id) Product Tag
+router.get("/:id", (req, res) => {
+  Tag.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [
+      {
+        model: Product,
+        through: ProductTag,
+      },
+    ],
+  }).then((tag) => res.json(tag));
 });
 
-router.post('/', (req, res) => {
-  // create a new tag
+// POST Route enables Creation of new Product Tag
+/*
+{
+    "tag_name": "fine art"
+}
+*/
+router.post("/", (req, res) => {
+  Tag.create(req.body).then((tag) => res.json(tag));
 });
 
-router.put('/:id', (req, res) => {
-  // update a tag's name by its `id` value
+// UPDATE Route enables Update of existing (:id) Product Tag
+router.put("/:id", (req, res) => {
+  Tag.update(req.body, { where: { id: req.params.id } }).then((tag) =>
+    res.json(tag)
+  );
 });
 
-router.delete('/:id', (req, res) => {
-  // delete on tag by its `id` value
+// DELETE Route enables Destruction of existing (:id) Product Tag
+router.delete("/:id", (req, res) => {
+  Tag.destroy({ where: { id: req.params.id } }).then((tag) => res.json(tag));
 });
 
+// Exports all Routes for use in other App Modules
 module.exports = router;

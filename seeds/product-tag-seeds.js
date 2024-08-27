@@ -1,4 +1,5 @@
-const { ProductTag } = require('../models');
+// Imports required App-specific Modules
+const { ProductTag } = require("../models");
 
 const productTagData = [
   {
