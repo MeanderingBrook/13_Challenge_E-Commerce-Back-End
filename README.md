@@ -14,7 +14,7 @@
 - [License](#license)
 - [Tests](#tests)
 - [GitHub Repository Location (HTTPS)](#github-repository-location-https)
-- [GitHub Pages Location](#github-pages-location)
+- [Screencastify Video Location](#screencastify-video-location)
 - [Application Screenshots](#application-screenshots) 
 
 
@@ -109,6 +109,11 @@ N / A
 ## GitHub Repository Location (HTTPS)
 
 https://github.com/MeanderingBrook/13_Challenge_E-Commerce-Back-End.git
+
+
+## Screencastify Video Location
+
+https://drive.google.com/file/d/1x-B1FzcLLOdw0WVO0zMm87CG0Wdt8oFN/view
 
 
 ## Application Screenshots
